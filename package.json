@@ -1,6 +1,6 @@
 {
   "name": "raml-generator",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Generate files from a RAML document and template functions",
   "main": "dist/index.js",
   "files": [
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mulesoft-labs/raml-generator.git"
+    "url": "git://github.com/doc-ai/raml-generator.git"
   },
   "keywords": [
     "raml",
