@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AddressData",
+  "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "address_country",
+        "postal_code"
+      ],
+      "properties": {
+        "address_country": {
+          "type": "string"
+        },
+        "address_locality": {
+          "type": "string"
+        },
+        "address_region": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "street_address": {
+          "type": "string"
+        }
+      }
+}

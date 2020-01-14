@@ -1,0 +1,61 @@
+{
+  "$ref": "#/definitions/PersonData",
+  "definitions": {
+    "PersonData": {
+      "discriminator": "type",
+      "discriminatorValue": "Person",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "lei",
+        "address",
+        "id",
+        "family_name",
+        "birth_date",
+        "email",
+        "given_name",
+        "type",
+        "gender",
+        "tax_id"
+      ],
+      "properties": {
+        "address": {
+          "$ref": "AddressData.json"
+        },
+        "customerData": {
+          "$ref": "CustomerData.json"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "$ref": "PersonTitle.json"
+        },
+        "given_name": {
+          "type": "string"
+        },
+        "family_name": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "female",
+            "male"
+          ]
+        },
+        "vat_id": {
+          "type": "string"
+        },
+        "birth_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "death_date": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

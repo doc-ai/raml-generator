@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/OrganizationData",
+  "definitions": {
+    "OrganizationData": {
+      "discriminator": "type",
+      "discriminatorValue": "Organization",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "lei",
+        "address",
+        "vat_id",
+        "id",
+        "email",
+        "type",
+        "tax_id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "tax_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "address_country",
+            "postal_code"
+          ],
+          "properties": {
+            "address_country": {
+              "type": "string"
+            },
+            "address_locality": {
+              "type": "string"
+            },
+            "address_region": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "street_address": {
+              "type": "string"
+            }
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "vat_id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

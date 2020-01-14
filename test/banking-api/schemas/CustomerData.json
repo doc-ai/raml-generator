@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomerData",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "type",
+        "lei",
+        "tax_id",
+        "email",
+        "address"
+      ],
+      "properties": {
+        "address": {
+          "$ref": "AddressData.json"
+        },
+        "type": {
+          "type": "string"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "tax_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+}

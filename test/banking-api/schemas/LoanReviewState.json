@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LoanReviewState",
+  "type": "string",
+  "enum": [
+    "requested",
+    "cancelled",
+    "underwriting",
+    "accepted",
+    "opening",
+    "failed",
+    "closed"
+  ],
+  "tsEnumNames": [
+    "requested",
+    "cancelled",
+    "underwriting",
+    "accepted",
+    "opening",
+    "failed",
+    "closed"
+  ]
+}

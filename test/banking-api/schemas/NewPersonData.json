@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/NewPersonData",
+  "definitions": {
+    "NewPersonData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "lei",
+        "postal_code",
+        "telephone",
+        "family_name",
+        "birth_date",
+        "address_country",
+        "email",
+        "given_name",
+        "gender",
+        "tax_id"
+      ],
+      "properties": {
+        "address_country": {
+          "type": "string"
+        },
+        "address_locality": {
+          "type": "string"
+        },
+        "address_region": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "street_address": {
+          "type": "string"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "tax_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "enum": [
+            "mr",
+            "mrs",
+            "ms",
+            "dr"
+          ]
+        },
+        "given_name": {
+          "type": "string"
+        },
+        "family_name": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "female",
+            "male"
+          ]
+        },
+        "vat_id": {
+          "type": "string"
+        },
+        "birth_date": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

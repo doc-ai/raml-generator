@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/BankAccountData",
+  "definitions": {
+    "BankAccountData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "account_number",
+        "accountType",
+        "amount",
+        "lei",
+        "fees_and_comissions",
+        "review_state",
+        "interest_rate",
+        "annual_interest_rate",
+        "minimum_inflow",
+        "overdraft_limit"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "account_number": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "saver"
+          ]
+        },
+        "amount": {
+          "$ref": "MonetaryAmountData.json"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "fees_and_comissions": {
+          "type": "string"
+        },
+        "review_state": {
+          "$ref": "AccountReviewState.json"
+        },
+        "interest_rate": {
+          "type": "number"
+        },
+        "annual_interest_rate": {
+          "type": "number"
+        },
+        "minimum_inflow": {
+          "$ref": "MonetaryAmountData.json"
+          }
+        },
+        "overdraft_limit": {
+          "$ref": "MonetaryAmountData.json"
+        }
+      }
+    }
+}
+

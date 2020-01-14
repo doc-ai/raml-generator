@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/NewOrganizationData",
+  "definitions": {
+    "NewOrganizationData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "postal_code",
+        "lei",
+        "telephone",
+        "vat_id",
+        "address_country",
+        "email",
+        "tax_id"
+      ],
+      "properties": {
+        "address_country": {
+          "type": "string"
+        },
+        "address_locality": {
+          "type": "string"
+        },
+        "address_region": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "street_address": {
+          "type": "string"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "tax_id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "vat_id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

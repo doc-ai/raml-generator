@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/NewBankAccountRequestData",
+  "definitions": {
+    "NewBankAccountRequestData": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "accountType"
+      ],
+      "properties": {
+        "accountType": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "saver"
+          ]
+        }
+      }
+    }
+  }
+}

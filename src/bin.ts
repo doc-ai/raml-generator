@@ -49,7 +49,7 @@ export function bin (generator: Generator, pkg: Pkg, argv: string[]): Promise<vo
     .parse(argv)
 
   return loadApi(args._[2],
-                 args.include || [],
+                 args.include ? args.include as string[] : [],
                  { rejectOnErrors: !!args.rejectOnErrors })
     .then(function (api: any) {
       const json = api.expand(true).toJSON()
@@ -58,14 +58,20 @@ export function bin (generator: Generator, pkg: Pkg, argv: string[]): Promise<vo
         return Promise.resolve(generator(json))
       }
 
-      const path = resolve(cwd, args.data)
+      const val = args.data
+      if (val) {
+        const path = resolve(cwd, val as string)
 
-      return readFile(path, 'utf8')
-        .then((contents: any) => parseJson(contents, null, path))
-        .then((data: any) => generator(json, data))
+        return readFile(path, 'utf8')
+          .then((contents: any) => parseJson(contents, null, path))
+          .then((data: any) => generator(json, data))
+      }
     })
     .then(function (output: GeneratorResult) {
-      return objectToFs(resolve(cwd, args.out), output.files)
+      const out = args.out
+      if (out) {
+        return objectToFs(resolve(cwd, out as string), output.files)
+      }
     })
     .then(function () {
       process.exit(0)

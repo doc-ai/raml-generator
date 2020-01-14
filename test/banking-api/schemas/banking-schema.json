@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sample Banking Schema",
+  "description": "json2ts banking-schema.json",
+  "type": "object",
+  "properties": {
+    "additionalProperties": false,
+    "NewCustomerData": {
+      "$ref": "./CustomerData.json"
+    },
+    "CustomerData": {
+      "$ref": "./CustomerData.json"
+    },
+    "PersonData": {
+      "$ref": "./PersonData.json"
+    },
+    "BankAccountData": {
+      "$ref": "./BankAccountData.json"
+    },
+    "NewBankAccountRequestData": {
+      "$ref": "./NewBankAccountRequestData.json"
+    },
+    "LoanData": {
+      "$ref": "./LoanData.json"
+    },
+    "NewLoanRequestData": {
+      "$ref": "./NewLoanRequestData.json"
+    },
+    "MonetaryAmountData": {
+      "$ref": "./MonetaryAmountData.json"
+    }
+  }
+}

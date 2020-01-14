@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PersonTitle",
+  "type": "string",
+  "enum": [
+    "mr",
+    "mrs",
+    "ms",
+    "dr"
+  ],
+  "tsEnumNames": [
+    "Mister",
+    "Misses",
+    "Ms",
+    "Doctor"
+  ]
+}
