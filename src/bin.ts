@@ -43,9 +43,14 @@ export function bin (generator: Generator, pkg: Pkg, argv: string[]): Promise<vo
     .array('include')
     .alias('i', 'include')
     .describe('i', 'Include additional RAML files (E.g. extensions)')
+    .demand('e')
+    .alias('e', 'rejectOnErrors')
+    .describe('e', 'rejectOnErrors')
     .parse(argv)
 
-  return loadApi(args._[2], args.include || [], { rejectOnErrors: true })
+  return loadApi(args._[2],
+                 args.include || [],
+                 { rejectOnErrors: !!args.rejectOnErrors })
     .then(function (api: any) {
       const json = api.expand(true).toJSON()
 
