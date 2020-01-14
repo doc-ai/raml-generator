@@ -1,6 +1,6 @@
 {
   "name": "raml-generator-err-ok",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Generate files from a RAML document and template functions",
   "main": "dist/index.js",
   "files": [

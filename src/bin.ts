@@ -48,9 +48,12 @@ export function bin (generator: Generator, pkg: Pkg, argv: string[]): Promise<vo
     .describe('e', 'rejectOnErrors')
     .parse(argv)
 
+  const val = (args.rejectOnErrors as string || '').toLowerCase()
+  const rejectOnErrors = val === 'true' || val === 'yes' || val === '1'
+
   return loadApi(args._[2],
                  args.include ? args.include as string[] : [],
-                 { rejectOnErrors: !!args.rejectOnErrors })
+                 { rejectOnErrors })
     .then(function (api: any) {
       const json = api.expand(true).toJSON()
 
